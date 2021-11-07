@@ -15,7 +15,6 @@ const NavWrapper = styled.div`
   flex-direction: column;
   color: var(--Headline);
   min-height: 100%;
-  font-family: "DM Sans", sans-serif;
 `
 
 const Title = styled.h1`
@@ -36,20 +35,17 @@ const NavLinks = styled.a`
 function Navbar() {
   return (
     <>
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
       <NavWrapper>
         <Title>Self-CSS</Title>
         <NavList>
           <NavListItem>
-            <Link href="/Design_Tokens">
-              <NavLinks>Design Tokens</NavLinks>
+            <Link href="/">
+              <NavLinks>Intro</NavLinks>
+            </Link>
+          </NavListItem>
+          <NavListItem>
+            <Link href="/Box_Model">
+              <NavLinks>The Box Model</NavLinks>
             </Link>
           </NavListItem>
           <NavListItem>

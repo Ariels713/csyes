@@ -22,7 +22,7 @@ const DesignTokenLinks = styled.a`
   cursor: pointer;
 `
 
-function Design_Tokens() {
+function Box_Model() {
   return (
     <>
       <Head>
@@ -42,4 +42,4 @@ function Design_Tokens() {
   )
 }
 
-export default Design_Tokens
+export default Box_Model
