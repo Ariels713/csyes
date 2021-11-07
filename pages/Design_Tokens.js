@@ -6,6 +6,8 @@ const DesignTokenNav = styled.div`
   display: flex;
   flex-direction: row;
   padding: clamp(1rem, 1.5rem, 1.75rem);
+  margin-top: 0.5rem;
+  margin-right: 1.5rem;
   gap: 1rem;
   justify-content: flex-end;
   font-family: "DM Sans", sans-serif;

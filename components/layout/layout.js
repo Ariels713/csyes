@@ -11,7 +11,7 @@ const LayoutWrapper = styled.div`
   --Text_Color: hsla(179, 99%, 6%, 1);
   display: grid;
   grid-template-columns: minmax(min(200px, 30%), 1fr) 6fr;
-  /* grid-template-rows: 12fr 1fr; */
+  grid-template-rows: 1fr 4rem;
   grid-template-areas:
     "navbar main"
     "navbar footer";
@@ -32,7 +32,7 @@ const MainWrapper = styled.main`
 `
 
 const FooterWrapper = styled.footer`
-  max-height: 50px;
+  background-color: var(--Highlight);
   grid-area: footer;
 `
 
