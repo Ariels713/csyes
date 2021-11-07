@@ -10,6 +10,7 @@ const NavWrapper = styled.div`
   --Link_Colors: hsla(161, 30%, 75%, 1);
   --Highlight: hsla(36, 93%, 68%, 1);
   --Text_Color: hsla(179, 99%, 6%, 1);
+
   display: flex;
   flex-direction: column;
   color: var(--Headline);

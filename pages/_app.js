@@ -3,7 +3,13 @@ import Layout from "../components/layout/layout"
 
 const GlobalStyles = createGlobalStyle`
 :root {
-  --primary-color: hsla(177, 100%, 14%, 1);
+  --dark-green: hsla(177, 100%, 14%, 1);
+  --light-green: hsla(161, 30%, 75%, 1);
+  --darkest-green: hsla(179, 99%, 6%, 1);
+  --yellow: hsla(36, 93%, 68%, 1);
+  --pinkish: hsla(360, 68%, 63%, 1.00);
+  --white: hsla(63, 100%, 100%, 1.00);
+  --gray: hsla(322, 7%, 90%, 1);
 }
 *,
 *::before,

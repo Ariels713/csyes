@@ -3,12 +3,6 @@ import Footer from "./Footer"
 import Navbar from "./Navbar"
 
 const LayoutWrapper = styled.div`
-  --primary-color: hsla(177, 100%, 14%, 1);
-  --secondary-color: hsla(161, 30%, 75%, 1);
-  --Headline: hsla(63, 100%, 100%, 1);
-  --Link_Colors: hsla(161, 30%, 75%, 1);
-  --Highlight: hsla(36, 93%, 68%, 1);
-  --Text_Color: hsla(179, 99%, 6%, 1);
   display: grid;
   grid-template-columns: minmax(min(200px, 30%), 1fr) 6fr;
   grid-template-rows: 1fr 4rem;
@@ -21,18 +15,18 @@ const LayoutWrapper = styled.div`
 
 const NavWrapper = styled.div`
   grid-area: navbar;
-  background-color: var(--secondary-color);
+  background-color: var(--light-green);
   min-height: 100vh;
 `
 
 const MainWrapper = styled.main`
-  background-color: var(--primary-color);
+  background-color: var(--dark-green);
   grid-area: main;
   min-height: 100%;
 `
 
 const FooterWrapper = styled.footer`
-  background-color: var(--Highlight);
+  background-color: var(--white);
   grid-area: footer;
 `
 
