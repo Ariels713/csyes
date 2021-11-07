@@ -38,17 +38,31 @@ const IntroTitle = styled.h1`
 
 const IntroCopy = styled.p`
   width: 40ch;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  margin-top: 1rem;
 `
 
-const WordSpan = styled.span`
+const CssSpan = styled.span`
   display: inline-block;
   background-color: var(--pinkish);
-  padding: 2px 8px;
+  padding: 0px 8px;
   font-weight: bold;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 4px;
   animation: ${slide_in} 1000ms;
+`
+
+const NameSpan = styled.span`
+  color: var(--dark-green);
+  display: inline-block;
+  font-size: clamp(1.25rem, 1.25vw, 1.75rem);
+  font-weight: bolder;
+  padding: 0px 8px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 4px;
+  background-color: var(--yellow);
 `
 
 export default function Home() {
@@ -62,13 +76,12 @@ export default function Home() {
       <IntroWrapper>
         <TitleWrapper>
           <IntroTitle>
-            Hello! Let's learn <WordSpan>CSS</WordSpan> Together!
+            Hey!! Let's learn <CssSpan>CSS</CssSpan> Together!
           </IntroTitle>
           <IntroCopy>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est
-            tempore maxime eligendi nisi. Dignissimos aliquam consequatur
-            debitis mollitia ducimus, eius voluptatibus illo ratione ipsa
-            voluptatum nisi voluptas commodi, magnam eaque.
+            I'm <NameSpan>Ariel!</NameSpan> Welcome to my CSS journey. I'm no
+            expert, in fact I've created this website so I can document the
+            thing's I build with CSS.
           </IntroCopy>
         </TitleWrapper>
         <SVGWrapper>
