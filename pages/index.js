@@ -1,7 +1,6 @@
-import Head from "next/head"
-import styled from "styled-components"
-import { keyframes } from "styled-components"
-import MeSVG from "../components/image_components/MeSVG"
+import Head from 'next/head'
+import styled, { keyframes } from 'styled-components'
+import MeSVG from '../components/image_components/MeSVG'
 
 const slide_in = keyframes`
   from {
@@ -44,6 +43,7 @@ const IntroCopy = styled.p`
 
 const CssSpan = styled.span`
   display: inline-block;
+  position: relative;
   background-color: var(--pinkish);
   padding: 0px 8px;
   font-weight: bold;
@@ -70,8 +70,8 @@ export default function Home() {
     <div>
       <Head>
         <title>CSYes</title>
-        <meta name="description" content="Css Documentation and examples" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='description' content='Css Documentation and examples' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <IntroWrapper>
         <TitleWrapper>

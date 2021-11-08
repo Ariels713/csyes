@@ -1,7 +1,17 @@
-import Head from "next/head"
-import Link from "next/link"
+import Head from 'next/head'
+import Link from 'next/link'
+import styled, { keyframes } from 'styled-components'
 
-import styled from "styled-components"
+const slide_in = keyframes`
+  from {
+    transform: translateX(-10px);
+    clip-path:polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  to {
+    transform: translateX(0px);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+`
 
 const NavWrapper = styled.div`
   --primary-color: hsla(177, 100%, 14%, 1);
@@ -25,31 +35,79 @@ const Title = styled.h1`
 
 const NavList = styled.ul``
 
-const NavListItem = styled.li``
+const NavListItem = styled.li`
+  margin-bottom: 0.5rem;
+  list-style: none;
+`
 
 const NavLinks = styled.a`
   display: block;
+  position: relative;
   cursor: pointer;
-  color: var(--Text_Color);
+  color: var(--dark-green);
+  background-color: var(--yellow);
+  font-size: clamp(0.75rem, 1.25vw, 1.25rem);
+  font-weight: bolder;
+  width: fit-content;
+  border-radius: 4px;
+  padding: 0 14px;
 `
+
+const NavLinkHidden = styled.span`
+  color: var(--white);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--pinkish);
+  padding: 0 14px;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  transition: clip-path 1000ms;
+
+  ${NavLinks}& :hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition: clip-path 300ms;
+  }
+`
+
+const TitleSpan1 = styled.span`
+  display: inline-block;
+  color: var(--pinkish);
+  font-weight: bolder;
+`
+const TitleSpan2 = styled.span`
+  display: inline-block;
+  color: var(--dark-green);
+`
+
+function onClick(e) {
+  e.preventDefault()
+}
+
 function Navbar() {
   return (
     <>
       <NavWrapper>
-        <Title>Self-CSS</Title>
+        <Title>
+          <TitleSpan1>CS</TitleSpan1>
+          <TitleSpan2>YE</TitleSpan2>
+          <TitleSpan1>S</TitleSpan1>
+        </Title>
         <NavList>
           <NavListItem>
-            <Link href="/">
-              <NavLinks>Intro</NavLinks>
+            <Link href='/'>
+              <NavLinks>
+                Intro
+                <NavLinkHidden aria-hidden='true'>Intro</NavLinkHidden>
+              </NavLinks>
             </Link>
           </NavListItem>
           <NavListItem>
-            <Link href="/Box_Model">
+            <Link href='/Box_Model'>
               <NavLinks>The Box Model</NavLinks>
             </Link>
           </NavListItem>
           <NavListItem>
-            <Link href="/Grid">
+            <Link href='/Grid'>
               <NavLinks>Grid</NavLinks>
             </Link>
           </NavListItem>

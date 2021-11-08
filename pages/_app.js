@@ -1,6 +1,6 @@
-import { createGlobalStyle, ThemeProvider } from "styled-components"
-import Layout from "../components/layout/layout"
-import Head from "next/head"
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import Layout from '../components/layout/layout'
+import Head from 'next/head'
 const GlobalStyles = createGlobalStyle`
 :root {
   --dark-green: hsla(177, 100%, 14%, 1);
@@ -68,11 +68,11 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <GlobalStyles />
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
         <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
-          rel="stylesheet"
+          href='https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap'
+          rel='stylesheet'
         />
       </Head>
       <Layout>
