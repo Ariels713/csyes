@@ -50,6 +50,11 @@ const Title = styled.h1`
 const NavList = styled.nav`
   position: relative;
   padding: clamp(0.5rem, 1rem, 1.25rem);
+  z-index: 1;
+`
+
+const NavListContainer = styled.div`
+  position: sticky;
 `
 
 const NavListItem = styled.li`
@@ -68,16 +73,6 @@ const TitleSpan2 = styled.span`
 `
 // Used react.forwardRef in order to pass down children/href to it's children.
 // href lets us pass our link string further down the tree.
-const NavLink = forwardRef((props, ref) => {
-  return (
-    <Link href={props.href}>
-      <NavLinkA>
-        {props.children}
-        <NavLinkRevealed>{props.children}</NavLinkRevealed>
-      </NavLinkA>
-    </Link>
-  )
-})
 
 const NavLinkA = styled.a`
   display: block;
@@ -108,6 +103,16 @@ const NavLinkRevealed = styled.span`
     transition: clip-path 300ms;
   }
 `
+const NavLink = forwardRef((props, ref) => {
+  return (
+    <Link href={props.href}>
+      <NavLinkA>
+        {props.children}
+        <NavLinkRevealed>{props.children}</NavLinkRevealed>
+      </NavLinkA>
+    </Link>
+  )
+})
 
 function Navbar() {
   return (
@@ -120,14 +125,16 @@ function Navbar() {
             <TitleSpan1>S</TitleSpan1>
           </Title>
         </MainHeader>
-        <NavList>
-          <NavListItem>
-            <NavLink href='/'>My Path</NavLink>
-          </NavListItem>
-          <NavListItem>
-            <NavLink href='/Grid'>Grid</NavLink>
-          </NavListItem>
-        </NavList>
+        <NavListContainer>
+          <NavList>
+            <NavListItem>
+              <NavLink href='/'>My Path</NavLink>
+            </NavListItem>
+            <NavListItem>
+              <NavLink href='/Grid'>Grid</NavLink>
+            </NavListItem>
+          </NavList>
+        </NavListContainer>
       </NavWrapper>
     </>
   )

@@ -1,7 +1,8 @@
-import Head from "next/head"
-import styled, { keyframes } from "styled-components"
-import LayersUpsideDown from "../components/image_components/LayersUpsideDown"
-import MeSVG from "../components/image_components/MeSVG"
+import Head from 'next/head'
+import styled, { keyframes } from 'styled-components'
+import LayersUpsideDown from '../components/image_components/LayersUpsideDown'
+import MeSVG from '../components/image_components/MeSVG'
+import IndexAbout from '../components/index/indexAbout'
 
 const slide_in = keyframes`
   from {
@@ -78,11 +79,6 @@ const IntroBody = styled.div`
   padding-right: 16px;
 `
 
-const AboutPath = styled.p`
-  color: var(--darkest-green);
-  grid-column: 2;
-`
-
 const FullBleed = styled.div`
   grid-column: 1 / -1;
   margin-left: -16px;
@@ -95,8 +91,8 @@ export default function Home() {
     <>
       <Head>
         <title>CSYes</title>
-        <meta name="description" content="Css Documentation and examples" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='description' content='Css Documentation and examples' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <IntroWrapper>
         <TitleWrapper>
@@ -117,15 +113,7 @@ export default function Home() {
         <FullBleed>
           <LayersUpsideDown />
         </FullBleed>
-        <AboutPath>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-          perspiciatis nihil possimus nam non dolorem voluptate libero pariatur
-          cumque laudantium autem reprehenderit magnam et nobis, ad, earum neque
-          totam quibusdam dolor. Repudiandae itaque nihil enim labore similique,
-          dolor minima, veniam dignissimos vero aperiam dolores vitae
-          praesentium pariatur beatae assumenda maiores? Dolor nam dolorum animi
-          sunt quod nobis repellat harum facilis.
-        </AboutPath>
+        <IndexAbout />
       </IntroBody>
     </>
   )
