@@ -21,17 +21,20 @@ const NavWrapper = styled.div`
   --Link_Colors: hsla(161, 30%, 75%, 1);
   --Highlight: hsla(36, 93%, 68%, 1);
   --Text_Color: hsla(179, 99%, 6%, 1);
-
   display: flex;
   flex-direction: column;
   color: var(--Headline);
   min-height: 100%;
+  border-right: solid 3px;
+  border-right-color: var(--darkest-green);
 `
 
 const Title = styled.h1`
+  display: inline-block;
   font-size: clamp(0.9rem, 1.25vw + 1rem, 2.2rem);
   text-align: center;
   padding: 1rem;
+  margin: 2rem 0;
 `
 
 const NavList = styled.ul``
@@ -53,7 +56,6 @@ const TitleSpan2 = styled.span`
 // Used react.forwardRef in order to pass down children/href to it's children.
 // href lets us pass our link string further down the tree.
 const NavLink = forwardRef((props, ref) => {
-  console.log("props.href", props.href)
   return (
     <Link href={props.href}>
       <NavLinkA>
@@ -78,6 +80,7 @@ const NavLinkA = styled.a`
 `
 
 const NavLinkRevealed = styled.span`
+  display: block;
   color: var(--white);
   position: absolute;
   top: 0;
@@ -86,6 +89,7 @@ const NavLinkRevealed = styled.span`
   padding: 0 14px;
   clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
   transition: clip-path 1000ms;
+  border-radius: 4px;
   ${NavLinkA}:hover & {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     transition: clip-path 300ms;

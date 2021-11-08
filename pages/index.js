@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import styled, { keyframes } from 'styled-components'
-import MeSVG from '../components/image_components/MeSVG'
+import Head from "next/head"
+import styled, { keyframes } from "styled-components"
+import LayersUpsideDown from "../components/image_components/LayersUpsideDown"
+import MeSVG from "../components/image_components/MeSVG"
 
 const slide_in = keyframes`
   from {
@@ -65,13 +66,37 @@ const NameSpan = styled.span`
   background-color: var(--yellow);
 `
 
+const IntroBody = styled.div`
+  /* min-height: 100%; */
+  background-color: var(--light-green);
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(60ch, 100%)
+    1fr;
+  padding-left: 16px;
+  padding-right: 16px;
+`
+
+const AboutPath = styled.p`
+  color: var(--darkest-green);
+  grid-column: 2;
+`
+
+const FullBleed = styled.div`
+  grid-column: 1 / -1;
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-top: -59px;
+`
+
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>CSYes</title>
-        <meta name='description' content='Css Documentation and examples' />
-        <link rel='icon' href='/favicon.ico' />
+        <meta name="description" content="Css Documentation and examples" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <IntroWrapper>
         <TitleWrapper>
@@ -88,6 +113,20 @@ export default function Home() {
           <MeSVG />
         </SVGWrapper>
       </IntroWrapper>
-    </div>
+      <IntroBody>
+        <FullBleed>
+          <LayersUpsideDown />
+        </FullBleed>
+        <AboutPath>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+          perspiciatis nihil possimus nam non dolorem voluptate libero pariatur
+          cumque laudantium autem reprehenderit magnam et nobis, ad, earum neque
+          totam quibusdam dolor. Repudiandae itaque nihil enim labore similique,
+          dolor minima, veniam dignissimos vero aperiam dolores vitae
+          praesentium pariatur beatae assumenda maiores? Dolor nam dolorum animi
+          sunt quod nobis repellat harum facilis.
+        </AboutPath>
+      </IntroBody>
+    </>
   )
 }
