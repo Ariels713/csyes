@@ -5,6 +5,7 @@ import MeSVG from "../components/image_components/MeSVG"
 import BlogStyleLayout from "../components/utils/BlogStyleLayout"
 import TitleAndParagraph from "../components/utils/TitleAndParagraph"
 import FullBleed from "../components/utils/FullBleed"
+import Layers from "../components/image_components/Layers"
 
 const slide_in = keyframes`
   from {
@@ -92,6 +93,7 @@ export default function Home() {
           <MeSVG />
         </SVGWrapper>
       </IntroWrapper>
+      {/* Blog style, 3 columns, copy in center */}
       <BlogStyleLayout>
         <FullBleed>
           <LayersUpsideDown />
@@ -100,7 +102,11 @@ export default function Home() {
           {" "}
           My learning path may differ than yours, but what works best for me is
           learning, writing, and building. The purporse of this website, is so I
-          can practice what I'm learning, and apply them somewhere.{" "}
+          can practice what I'm learning, and apply them somewhere.
+          <br /> <br />
+          Everything that I've learned has been from others, here are the
+          resources I've used along my path. This list will continue to grow
+          through out my journey.
         </TitleAndParagraph>
       </BlogStyleLayout>
     </>

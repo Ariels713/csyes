@@ -11,9 +11,18 @@ const AboutTitle = styled.h2`
   margin-bottom: 0.5rem;
   color: var(--white);
   font-size: 2.5rem;
+  background-color: var(--pinkish);
+  padding: 0 8px;
+  font-weight: bold;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 4px;
 `
 
-const AboutP = styled.p``
+const AboutP = styled.p`
+  display: inline-block;
+  padding: 1rem 0;
+`
 
 function TitleAndParagraph({ children, title }) {
   return (
