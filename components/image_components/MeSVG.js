@@ -65,7 +65,7 @@ function ArielSVG(props) {
                   fill='#fff'
                 />
                 <animated.path
-                  hover={{ scale: '1.2' }}
+                  hover={{ transform: 'translateX(20px)' }}
                   id='big_yellow_circle'
                   d='M71.88 300.9a20.53 20.53 0 1 0 0 41.06 20.53 20.53 0 0 0 0-41.06z'
                   fill='#FBCD59'

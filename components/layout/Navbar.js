@@ -40,7 +40,27 @@ const NavListItem = styled.li`
   list-style: none;
 `
 
-const NavLinks = styled.a`
+const TitleSpan1 = styled.span`
+  display: inline-block;
+  color: var(--pinkish);
+  font-weight: bolder;
+`
+const TitleSpan2 = styled.span`
+  display: inline-block;
+  color: var(--dark-green);
+`
+
+function NavLink({ href, children }) {
+  return (
+    <Link href={href}>
+      <NavLinkA>
+        {children}
+        <NavLinkRevealed>{children}</NavLinkRevealed>
+      </NavLinkA>
+    </Link>
+  )
+}
+const NavLinkA = styled.a`
   display: block;
   position: relative;
   cursor: pointer;
@@ -53,7 +73,7 @@ const NavLinks = styled.a`
   padding: 0 14px;
 `
 
-const NavLinkHidden = styled.span`
+const NavLinkRevealed = styled.span`
   color: var(--white);
   position: absolute;
   top: 0;
@@ -62,26 +82,11 @@ const NavLinkHidden = styled.span`
   padding: 0 14px;
   clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
   transition: clip-path 1000ms;
-
-  ${NavLinks}& :hover {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  ${NavLinkA}:hover & {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     transition: clip-path 300ms;
   }
 `
-
-const TitleSpan1 = styled.span`
-  display: inline-block;
-  color: var(--pinkish);
-  font-weight: bolder;
-`
-const TitleSpan2 = styled.span`
-  display: inline-block;
-  color: var(--dark-green);
-`
-
-function onClick(e) {
-  e.preventDefault()
-}
 
 function Navbar() {
   return (
@@ -93,23 +98,31 @@ function Navbar() {
           <TitleSpan1>S</TitleSpan1>
         </Title>
         <NavList>
-          <NavListItem>
+          {/* <NavListItem>
             <Link href='/'>
               <NavLinks>
                 Intro
                 <NavLinkHidden aria-hidden='true'>Intro</NavLinkHidden>
               </NavLinks>
             </Link>
-          </NavListItem>
-          <NavListItem>
+          </NavListItem> */}
+          {/* <NavListItem>
             <Link href='/Box_Model'>
               <NavLinks>The Box Model</NavLinks>
             </Link>
-          </NavListItem>
-          <NavListItem>
+          </NavListItem> */}
+          {/* <NavListItem>
             <Link href='/Grid'>
               <NavLinks>Grid</NavLinks>
             </Link>
+          </NavListItem> */}
+          <NavListItem>
+            <Link href='/'>
+              <NavLink>My Path</NavLink>
+            </Link>
+          </NavListItem>
+          <NavListItem>
+            <NavLink>Grid</NavLink>
           </NavListItem>
         </NavList>
       </NavWrapper>
