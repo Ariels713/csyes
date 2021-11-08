@@ -1,8 +1,10 @@
-import Head from 'next/head'
-import styled, { keyframes } from 'styled-components'
-import LayersUpsideDown from '../components/image_components/LayersUpsideDown'
-import MeSVG from '../components/image_components/MeSVG'
-import IndexAbout from '../components/index/indexAbout'
+import Head from "next/head"
+import styled, { keyframes } from "styled-components"
+import LayersUpsideDown from "../components/image_components/LayersUpsideDown"
+import MeSVG from "../components/image_components/MeSVG"
+import BlogStyleLayout from "../components/utils/BlogStyleLayout"
+import TitleAndParagraph from "../components/utils/TitleAndParagraph"
+import FullBleed from "../components/utils/FullBleed"
 
 const slide_in = keyframes`
   from {
@@ -67,32 +69,13 @@ const NameSpan = styled.span`
   background-color: var(--yellow);
 `
 
-const IntroBody = styled.div`
-  /* min-height: 100%; */
-  background-color: var(--light-green);
-  display: grid;
-  grid-template-columns:
-    1fr
-    min(60ch, 100%)
-    1fr;
-  padding-left: 16px;
-  padding-right: 16px;
-`
-
-const FullBleed = styled.div`
-  grid-column: 1 / -1;
-  margin-left: -16px;
-  margin-right: -16px;
-  margin-top: -59px;
-`
-
 export default function Home() {
   return (
     <>
       <Head>
         <title>CSYes</title>
-        <meta name='description' content='Css Documentation and examples' />
-        <link rel='icon' href='/favicon.ico' />
+        <meta name="description" content="Css Documentation and examples" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <IntroWrapper>
         <TitleWrapper>
@@ -102,19 +85,24 @@ export default function Home() {
           <IntroCopy>
             I'm <NameSpan>Ariel!</NameSpan> Welcome to my CSS journey. I'm no
             expert, in fact I've created this website so I can document the
-            thing's I build with CSS.
+            thing's I build and learn with CSS.
           </IntroCopy>
         </TitleWrapper>
         <SVGWrapper>
           <MeSVG />
         </SVGWrapper>
       </IntroWrapper>
-      <IntroBody>
+      <BlogStyleLayout>
         <FullBleed>
           <LayersUpsideDown />
         </FullBleed>
-        <IndexAbout />
-      </IntroBody>
+        <TitleAndParagraph title="Learn By Building">
+          {" "}
+          My learning path may differ than yours, but what works best for me is
+          learning, writing, and building. The purporse of this website, is so I
+          can practice what I'm learning, and apply them somewhere.{" "}
+        </TitleAndParagraph>
+      </BlogStyleLayout>
     </>
   )
 }
