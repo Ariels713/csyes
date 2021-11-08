@@ -1,7 +1,7 @@
-import { forwardRef } from "react"
-import Head from "next/head"
-import Link from "next/link"
-import styled, { keyframes } from "styled-components"
+import { forwardRef } from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import styled, { keyframes } from 'styled-components'
 
 const slide_in = keyframes`
   from {
@@ -21,12 +21,22 @@ const NavWrapper = styled.div`
   --Link_Colors: hsla(161, 30%, 75%, 1);
   --Highlight: hsla(36, 93%, 68%, 1);
   --Text_Color: hsla(179, 99%, 6%, 1);
+  position: relative;
   display: flex;
   flex-direction: column;
   color: var(--Headline);
   min-height: 100%;
   border-right: solid 3px;
   border-right-color: var(--darkest-green);
+  isolation: isolate;
+`
+const MainHeader = styled.div`
+  display: grid;
+  place-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: var(--light-green);
 `
 
 const Title = styled.h1`
@@ -37,7 +47,10 @@ const Title = styled.h1`
   margin: 2rem 0;
 `
 
-const NavList = styled.ul``
+const NavList = styled.nav`
+  position: relative;
+  padding: clamp(0.5rem, 1rem, 1.25rem);
+`
 
 const NavListItem = styled.li`
   margin-bottom: 0.5rem;
@@ -100,17 +113,19 @@ function Navbar() {
   return (
     <>
       <NavWrapper>
-        <Title>
-          <TitleSpan1>CS</TitleSpan1>
-          <TitleSpan2>YE</TitleSpan2>
-          <TitleSpan1>S</TitleSpan1>
-        </Title>
+        <MainHeader>
+          <Title>
+            <TitleSpan1>CS</TitleSpan1>
+            <TitleSpan2>YE</TitleSpan2>
+            <TitleSpan1>S</TitleSpan1>
+          </Title>
+        </MainHeader>
         <NavList>
           <NavListItem>
-            <NavLink href="/">My Path</NavLink>
+            <NavLink href='/'>My Path</NavLink>
           </NavListItem>
           <NavListItem>
-            <NavLink href="/Grid">Grid</NavLink>
+            <NavLink href='/Grid'>Grid</NavLink>
           </NavListItem>
         </NavList>
       </NavWrapper>
