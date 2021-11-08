@@ -1,8 +1,8 @@
-import { forwardRef } from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import styled, { keyframes } from 'styled-components'
-
+import { forwardRef } from "react"
+import Head from "next/head"
+import Link from "next/link"
+import styled, { keyframes } from "styled-components"
+import MonsterCSS from "./MonsterCSS"
 const slide_in = keyframes`
   from {
     transform: translateX(-10px);
@@ -15,15 +15,10 @@ const slide_in = keyframes`
 `
 
 const NavWrapper = styled.div`
-  --primary-color: hsla(177, 100%, 14%, 1);
-  --secondary-color: hsla(161, 30%, 75%, 1);
-  --Headline: hsla(63, 100%, 100%, 1);
-  --Link_Colors: hsla(161, 30%, 75%, 1);
-  --Highlight: hsla(36, 93%, 68%, 1);
-  --Text_Color: hsla(179, 99%, 6%, 1);
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: auto 1fr;
   color: var(--Headline);
   min-height: 100%;
   border-right: solid 3px;
@@ -48,13 +43,14 @@ const Title = styled.h1`
 `
 
 const NavList = styled.nav`
-  position: relative;
+  position: sticky;
+  top: 175px;
   padding: clamp(0.5rem, 1rem, 1.25rem);
-  z-index: 1;
 `
 
-const NavListContainer = styled.div`
-  position: sticky;
+const Aside = styled.div`
+  position: relative;
+  z-index: 1;
 `
 
 const NavListItem = styled.li`
@@ -118,23 +114,22 @@ function Navbar() {
   return (
     <>
       <NavWrapper>
+        {/* Main Header */}
         <MainHeader>
           <Title>
-            <TitleSpan1>CS</TitleSpan1>
-            <TitleSpan2>YE</TitleSpan2>
-            <TitleSpan1>S</TitleSpan1>
+            <MonsterCSS />
           </Title>
         </MainHeader>
-        <NavListContainer>
+        <Aside>
           <NavList>
             <NavListItem>
-              <NavLink href='/'>My Path</NavLink>
+              <NavLink href="/">My Path</NavLink>
             </NavListItem>
             <NavListItem>
-              <NavLink href='/Grid'>Grid</NavLink>
+              <NavLink href="/Grid">Grid</NavLink>
             </NavListItem>
           </NavList>
-        </NavListContainer>
+        </Aside>
       </NavWrapper>
     </>
   )
