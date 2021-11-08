@@ -6,6 +6,8 @@ import BlogStyleLayout from "../components/utils/BlogStyleLayout"
 import TitleAndParagraph from "../components/utils/TitleAndParagraph"
 import FullBleed from "../components/utils/FullBleed"
 import Layers from "../components/image_components/Layers"
+import Resoures from "../components/Resoures"
+import HalfBleed from "../components/utils/HalfBleed"
 
 const slide_in = keyframes`
   from {
@@ -108,6 +110,9 @@ export default function Home() {
           resources I've used along my path. This list will continue to grow
           through out my journey.
         </TitleAndParagraph>
+        <HalfBleed>
+          <Resoures>Josh Cuomoe</Resoures>
+        </HalfBleed>
       </BlogStyleLayout>
     </>
   )
