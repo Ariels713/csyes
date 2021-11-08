@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import styled, { keyframes } from 'styled-components'
+import { forwardRef } from "react"
+import Head from "next/head"
+import Link from "next/link"
+import styled, { keyframes } from "styled-components"
 
 const slide_in = keyframes`
   from {
@@ -49,17 +50,20 @@ const TitleSpan2 = styled.span`
   display: inline-block;
   color: var(--dark-green);
 `
-
-function NavLink({ href, children }) {
+// Used react.forwardRef in order to pass down children/href to it's children.
+// href lets us pass our link string further down the tree.
+const NavLink = forwardRef((props, ref) => {
+  console.log("props.href", props.href)
   return (
-    <Link href={href}>
+    <Link href={props.href}>
       <NavLinkA>
-        {children}
-        <NavLinkRevealed>{children}</NavLinkRevealed>
+        {props.children}
+        <NavLinkRevealed>{props.children}</NavLinkRevealed>
       </NavLinkA>
     </Link>
   )
-}
+})
+
 const NavLinkA = styled.a`
   display: block;
   position: relative;
@@ -98,31 +102,11 @@ function Navbar() {
           <TitleSpan1>S</TitleSpan1>
         </Title>
         <NavList>
-          {/* <NavListItem>
-            <Link href='/'>
-              <NavLinks>
-                Intro
-                <NavLinkHidden aria-hidden='true'>Intro</NavLinkHidden>
-              </NavLinks>
-            </Link>
-          </NavListItem> */}
-          {/* <NavListItem>
-            <Link href='/Box_Model'>
-              <NavLinks>The Box Model</NavLinks>
-            </Link>
-          </NavListItem> */}
-          {/* <NavListItem>
-            <Link href='/Grid'>
-              <NavLinks>Grid</NavLinks>
-            </Link>
-          </NavListItem> */}
           <NavListItem>
-            <Link href='/'>
-              <NavLink>My Path</NavLink>
-            </Link>
+            <NavLink href="/">My Path</NavLink>
           </NavListItem>
           <NavListItem>
-            <NavLink>Grid</NavLink>
+            <NavLink href="/Grid">Grid</NavLink>
           </NavListItem>
         </NavList>
       </NavWrapper>
