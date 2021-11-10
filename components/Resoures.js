@@ -1,12 +1,13 @@
 import styled from "styled-components"
-import { img } from "../public/images/IMG_1778.jpeg"
+import img from "../public/images/IMG_1778.jpeg"
+
 const ResourseStack = styled.div`
   position: relative;
   display: grid;
   grid-template-areas: "stack";
   place-items: center;
   background-color: var(--pinkish);
-
+  background-image: url(${img});
   height: 240px;
   width: 180px;
   border-radius: 8px;
